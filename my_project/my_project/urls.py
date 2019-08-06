@@ -16,16 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.urls import path
+from django.urls import path, include
 
-from project.views import my_project_create, my_project_view
 from . import settings
 
 urlpatterns = [
+    path('',include('Blog.urls')),
     path('admin/', admin.site.urls),
-    path('create/', my_project_create),
-    path('', my_project_create),
-    path('view/', my_project_view)
+    path('blog/', include('Blog.urls')),
+    path('polls/', include('polls.urls')),
+    path('api/', include('api.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

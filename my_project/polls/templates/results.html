@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Intrebare : {{ question }}</h1>
+
+<ul>
+    {% for choice in choices %}
+    <p>{{ choice.choice_text }} -- {{ choice.votes }}</p>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}">Vote again!</a>
+
+
+{% endblock %}

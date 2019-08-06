@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ question.question_text }}</h1>
+<p>For <a href = "/polls/{{ question.id }}/">this</a> question add some new choices</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="Save"/>
+</form>
+
+
+{% endblock %}
