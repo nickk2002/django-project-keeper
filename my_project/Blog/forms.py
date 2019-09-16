@@ -1,7 +1,7 @@
 from django import forms
 import re
 from .models import Article
-
+from django.contrib.auth.models import User
 
 class ArticleForm(forms.ModelForm):
     title = forms.CharField()
@@ -21,3 +21,4 @@ class ArticleForm(forms.ModelForm):
             return title
         else:
             raise forms.ValidationError("Enter a new title! Should have the first letter uppercase and at least 10 characters")
+
