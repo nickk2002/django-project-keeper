@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     # own apps
     'Blog',
-    'polls',
-    'api'
+    # 'api',
 ]
 
 MIDDLEWARE = [

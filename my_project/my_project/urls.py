@@ -23,8 +23,8 @@ from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('Blog.urls')),
-    path('polls/', include('polls.urls')),
-    path('api/', include('api.urls')),
+    # path('polls/', include('polls.urls')),
+    # path('api/', include('api.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()
